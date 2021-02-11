@@ -1,6 +1,6 @@
 package homework;
 
-public class Customer implements Comparable<Customer> {
+public class Customer {
 
   private final long id;
   private String name;
@@ -43,17 +43,9 @@ public class Customer implements Comparable<Customer> {
       '}';
   }
 
-  public Customer copy() {
+  public Customer clone() {
     return new Customer(this.id, this.name, this.scores);
   }
-
-  @Override
-  public int compareTo(Customer o) {
-    Long scores = this.scores;
-    int result = scores.compareTo(o.scores);
-    return result;
-  }
-
 
   @Override
   public boolean equals(Object o) {
